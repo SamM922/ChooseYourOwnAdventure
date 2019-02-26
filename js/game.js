@@ -21,7 +21,7 @@ var game = {
 
         cave: {
             background_image: "fire.gif",
-            message: "You may have died!",
+            message: "You died! Not good!",
             choices: [
                 {
                     text: "Start over",
@@ -60,6 +60,7 @@ var game = {
         },
         
         junction: {
+            background_image: "junction.gif",
             message: "Ooh, a junction! Which way?",
             choices: [
             {
@@ -94,6 +95,7 @@ var game = {
         },
         
         win: {
+            background_image: "hacker.png",
             message: "Oh crap, you found me. I guess you win :(",
             choices: [
                 {
