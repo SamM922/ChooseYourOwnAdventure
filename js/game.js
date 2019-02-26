@@ -1,7 +1,6 @@
 // NOTE - You must have a level with the name "start".  This is used as the first level in the game.
 
 var game = {
-    music: "98_Lost_Mine.mp3",
     background_image: "intro-bg.jpg",
     levels: {
 
@@ -14,7 +13,7 @@ var game = {
                 },
 
                 {
-                    text: "Keep on moving",
+                    text: "Keep going",
                     nextLevel: "field",
                 },
             ]
@@ -22,8 +21,7 @@ var game = {
 
         cave: {
             background_image: "fire.gif",
-            music: "Final-Fantasy-7-Boss-Battle.mp3",
-            message: "You come across a fire monster or something!",
+            message: "You may have died!",
             choices: [
                 {
                     text: "Start over",
@@ -33,14 +31,76 @@ var game = {
         },
 
         field: {
-            message: "Some adventurer you are...",
+            message: "Good choice! You come across another dark cave",
             choices: [
                 {
-                    text: "Start over",
+                    text: "Enter this cave",
+                    nextLevel: "cave2",
+                },
+                
+                {
+                    text: "Keep going again",
+                    nextLevel: "boring",
+                },
+            ]
+        },
+        
+        cave2: {
+            message: "It's reaaaaly dark. You sure?",
+            choices: [
+            {
+                text: "Yes!",
+                nextLevel: "junction",
+            },
+            {
+                text: "Not really...",
+                nextLevel: "boring",
+            },
+            ]
+        },
+        
+        junction: {
+            message: "Ooh, a junction! Which way?",
+            choices: [
+            {
+                text: "Left",
+                nextLevel: "cave",
+            },
+            {
+                text: "Right",
+                nextLevel: "win",
+            },
+            ]
+        },
+        
+        boring: {
+            message: "You live boringly ever after!",
+            choices: [
+                {
+                    text: "Continiue",
+                    nextLevel: "end2",
+                },
+            ]
+        },
+        
+        end2: {
+            message: "You lived! But did you win?...",
+            choices: [
+                {
+                    text: "Start Over",
                     nextLevel: "start",
                 },
             ]
         },
-
+        
+        win: {
+            message: "Oh crap, you found me. I guess you win :(",
+            choices: [
+                {
+                    text: "Start Over",
+                    nextLevel: "start",
+                },
+            ]
+        },
     }
 };
